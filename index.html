@@ -1,0 +1,624 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Escola DL Decor | Cursos de Decoração</title>
+  <meta name="description" content="Cursos presenciais de decoração de festas com Diego Lopes: Iniciante, Avançado e GOD." />
+  <style>
+    :root{
+      --preto:#101010;
+      --grafite:#1a1a1a;
+      --dourado:#c7a24b;
+      --dourado-claro:#ead59b;
+      --branco:#ffffff;
+      --cinza:#f5f3ee;
+      --texto:#292929;
+      --borda:#ded9cd;
+      --raio:22px;
+      --sombra:0 18px 50px rgba(0,0,0,.12);
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      font-family:Arial, Helvetica, sans-serif;
+      color:var(--texto);
+      background:var(--branco);
+      line-height:1.55;
+    }
+    a{text-decoration:none;color:inherit}
+    img{max-width:100%;display:block}
+    .container{width:min(1160px,92%);margin:auto}
+    .tag{
+      display:inline-flex;
+      padding:8px 14px;
+      border:1px solid rgba(199,162,75,.45);
+      border-radius:999px;
+      color:var(--dourado-claro);
+      text-transform:uppercase;
+      letter-spacing:.12em;
+      font-size:.76rem;
+      font-weight:700;
+    }
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      min-height:52px;
+      padding:14px 24px;
+      border-radius:999px;
+      font-weight:800;
+      transition:.2s ease;
+      border:1px solid transparent;
+      cursor:pointer;
+    }
+    .btn:hover{transform:translateY(-2px)}
+    .btn-gold{background:var(--dourado);color:var(--preto);box-shadow:0 10px 25px rgba(199,162,75,.28)}
+    .btn-outline{border-color:rgba(255,255,255,.4);color:white}
+    .section{padding:88px 0}
+    .section-title{
+      font-size:clamp(2rem,4vw,3.6rem);
+      line-height:1.06;
+      margin:0 0 18px;
+      color:var(--preto);
+      letter-spacing:-.03em;
+    }
+    .section-subtitle{
+      max-width:720px;
+      margin:0 auto 44px;
+      text-align:center;
+      color:#666;
+      font-size:1.06rem;
+    }
+    header{
+      position:sticky;
+      top:0;
+      z-index:20;
+      background:rgba(16,16,16,.92);
+      backdrop-filter:blur(12px);
+      border-bottom:1px solid rgba(255,255,255,.08);
+    }
+    nav{
+      min-height:74px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:24px;
+      color:white;
+    }
+    .brand{
+      display:flex;
+      align-items:center;
+      gap:12px;
+      font-weight:900;
+      letter-spacing:.04em;
+    }
+    .brand-mark{
+      width:40px;height:40px;
+      display:grid;place-items:center;
+      border:2px solid var(--dourado);
+      border-radius:12px;
+      color:var(--dourado);
+      font-size:.9rem;
+    }
+    .nav-links{display:flex;gap:22px;font-size:.92rem;color:#ddd}
+    .hero{
+      min-height:760px;
+      display:grid;
+      align-items:center;
+      background:
+        linear-gradient(90deg,rgba(0,0,0,.92) 0%,rgba(0,0,0,.78) 45%,rgba(0,0,0,.30) 100%),
+        radial-gradient(circle at 78% 35%,rgba(199,162,75,.30),transparent 34%),
+        linear-gradient(135deg,#151515,#342b1c);
+      color:white;
+      overflow:hidden;
+    }
+    .hero-grid{
+      display:grid;
+      grid-template-columns:1.05fr .95fr;
+      gap:46px;
+      align-items:center;
+      padding:82px 0;
+    }
+    .hero h1{
+      font-size:clamp(3rem,6.5vw,6rem);
+      line-height:.96;
+      margin:20px 0 22px;
+      letter-spacing:-.05em;
+      max-width:850px;
+    }
+    .hero h1 span{color:var(--dourado)}
+    .hero p{font-size:1.15rem;color:#ddd;max-width:690px;margin-bottom:32px}
+    .hero-actions{display:flex;gap:14px;flex-wrap:wrap}
+    .hero-card{
+      min-height:520px;
+      border-radius:34px;
+      background:
+        linear-gradient(180deg,rgba(255,255,255,.04),rgba(255,255,255,.01)),
+        linear-gradient(135deg,#342b1c,#111);
+      border:1px solid rgba(255,255,255,.13);
+      box-shadow:var(--sombra);
+      position:relative;
+      overflow:hidden;
+      display:flex;
+      align-items:flex-end;
+      padding:28px;
+    }
+    .hero-card::before{
+      content:"ESPAÇO PARA FOTO DO DIEGO";
+      position:absolute;
+      inset:0;
+      display:grid;
+      place-items:center;
+      color:rgba(255,255,255,.35);
+      font-weight:800;
+      letter-spacing:.08em;
+      text-align:center;
+      padding:30px;
+    }
+    .hero-mini{
+      position:relative;
+      width:100%;
+      padding:18px;
+      background:rgba(0,0,0,.62);
+      border:1px solid rgba(255,255,255,.12);
+      border-radius:18px;
+      backdrop-filter:blur(8px);
+    }
+    .hero-mini strong{display:block;color:var(--dourado-claro);font-size:1.1rem}
+    .stats{
+      background:var(--preto);
+      color:white;
+      padding:24px 0;
+    }
+    .stats-grid{
+      display:grid;
+      grid-template-columns:repeat(4,1fr);
+      gap:14px;
+      text-align:center;
+    }
+    .stat{padding:16px}
+    .stat strong{display:block;color:var(--dourado);font-size:1.7rem}
+    .about-grid{
+      display:grid;
+      grid-template-columns:.95fr 1.05fr;
+      gap:54px;
+      align-items:center;
+    }
+    .photo-placeholder{
+      min-height:520px;
+      border-radius:var(--raio);
+      background:linear-gradient(135deg,#e8e2d4,#b49a62);
+      display:grid;
+      place-items:center;
+      color:#4c402b;
+      font-weight:800;
+      letter-spacing:.07em;
+      text-align:center;
+      padding:26px;
+      box-shadow:var(--sombra);
+    }
+    .checklist{display:grid;gap:12px;margin:26px 0}
+    .check{display:flex;gap:12px;align-items:flex-start}
+    .check b{
+      width:26px;height:26px;border-radius:50%;
+      display:grid;place-items:center;
+      background:var(--dourado);
+      color:var(--preto);
+      flex:0 0 26px;
+    }
+    .courses{background:var(--cinza)}
+    .cards{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:22px;
+    }
+    .course-card{
+      background:white;
+      border:1px solid var(--borda);
+      border-radius:var(--raio);
+      overflow:hidden;
+      box-shadow:0 10px 30px rgba(0,0,0,.06);
+      display:flex;
+      flex-direction:column;
+    }
+    .course-cover{
+      min-height:230px;
+      display:grid;
+      place-items:center;
+      text-align:center;
+      padding:20px;
+      color:white;
+      font-weight:900;
+      letter-spacing:.08em;
+      background:linear-gradient(135deg,#181818,#5a4824);
+    }
+    .course-body{padding:26px;display:flex;flex-direction:column;flex:1}
+    .course-body h3{font-size:1.65rem;margin:0 0 10px}
+    .course-body ul{padding-left:20px;color:#555;flex:1}
+    .video-grid{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:22px;
+    }
+    .video-box{
+      aspect-ratio:16/10;
+      border-radius:var(--raio);
+      background:linear-gradient(135deg,#202020,#4b3c1f);
+      display:grid;
+      place-items:center;
+      color:white;
+      text-align:center;
+      padding:22px;
+      box-shadow:var(--sombra);
+    }
+    .play{
+      width:68px;height:68px;border-radius:50%;
+      display:grid;place-items:center;
+      background:var(--dourado);
+      color:var(--preto);
+      font-size:1.6rem;
+      margin:auto auto 12px;
+    }
+    .learn-grid{
+      display:grid;
+      grid-template-columns:repeat(5,1fr);
+      gap:14px;
+    }
+    .learn-item{
+      border:1px solid var(--borda);
+      border-radius:18px;
+      padding:22px 14px;
+      text-align:center;
+      background:white;
+      font-weight:700;
+    }
+    .learn-item span{display:block;font-size:1.8rem;margin-bottom:8px}
+    .gallery{
+      background:var(--preto);
+      color:white;
+    }
+    .gallery .section-title{color:white;text-align:center}
+    .gallery-grid{
+      display:grid;
+      grid-template-columns:1.3fr .7fr .7fr;
+      grid-auto-rows:220px;
+      gap:16px;
+    }
+    .gallery-item{
+      border-radius:18px;
+      background:linear-gradient(135deg,#3c3324,#b5964e);
+      display:grid;place-items:center;
+      color:rgba(255,255,255,.72);
+      font-weight:800;
+      text-align:center;
+      padding:18px;
+    }
+    .gallery-item:first-child{grid-row:span 2}
+    .testimonials{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:20px;
+    }
+    .quote{
+      padding:28px;
+      border:1px solid var(--borda);
+      border-radius:var(--raio);
+      background:white;
+    }
+    .stars{color:var(--dourado);letter-spacing:.12em}
+    .certificate{
+      background:linear-gradient(135deg,#f6f2e8,#e5d4a4);
+    }
+    .certificate-grid{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:50px;
+      align-items:center;
+    }
+    .cert-placeholder{
+      min-height:360px;
+      border:10px solid white;
+      outline:1px solid #b89a56;
+      background:white;
+      display:grid;
+      place-items:center;
+      color:#8a6d2c;
+      font-weight:900;
+      text-align:center;
+      box-shadow:var(--sombra);
+      transform:rotate(-2deg);
+    }
+    .faq{max-width:860px;margin:auto}
+    details{
+      border-bottom:1px solid var(--borda);
+      padding:20px 0;
+    }
+    summary{font-weight:800;cursor:pointer;font-size:1.05rem}
+    details p{color:#666}
+    .final-cta{
+      background:var(--preto);
+      color:white;
+      text-align:center;
+    }
+    .final-cta h2{
+      font-size:clamp(2.5rem,5vw,4.8rem);
+      line-height:1;
+      margin:0 auto 18px;
+      max-width:900px;
+    }
+    .form-box{
+      margin:34px auto 0;
+      width:min(760px,100%);
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:14px;
+      text-align:left;
+    }
+    .form-box input,.form-box select{
+      width:100%;
+      min-height:52px;
+      border-radius:14px;
+      border:1px solid rgba(255,255,255,.2);
+      background:#1b1b1b;
+      color:white;
+      padding:0 16px;
+    }
+    .form-box button{grid-column:1/-1}
+    footer{
+      background:#090909;
+      color:#aaa;
+      padding:28px 0;
+      text-align:center;
+      font-size:.9rem;
+    }
+    @media (max-width:900px){
+      .nav-links{display:none}
+      .hero-grid,.about-grid,.certificate-grid{grid-template-columns:1fr}
+      .hero-card{min-height:420px}
+      .cards,.video-grid,.testimonials{grid-template-columns:1fr}
+      .learn-grid{grid-template-columns:repeat(2,1fr)}
+      .gallery-grid{grid-template-columns:1fr 1fr}
+      .stats-grid{grid-template-columns:repeat(2,1fr)}
+    }
+    @media (max-width:560px){
+      .section{padding:64px 0}
+      .hero{min-height:auto}
+      .hero-grid{padding:60px 0}
+      .hero h1{font-size:3.2rem}
+      .hero-actions .btn{width:100%}
+      .gallery-grid{grid-template-columns:1fr;grid-auto-rows:190px}
+      .gallery-item:first-child{grid-row:span 1}
+      .form-box{grid-template-columns:1fr}
+      .learn-grid{grid-template-columns:1fr 1fr}
+    }
+  </style>
+</head>
+<body>
+<header>
+  <div class="container">
+    <nav>
+      <a class="brand" href="#inicio">
+        <span class="brand-mark">DL</span>
+        <span>ESCOLA DL DECOR</span>
+      </a>
+      <div class="nav-links">
+        <a href="#sobre">Diego Lopes</a>
+        <a href="#cursos">Cursos</a>
+        <a href="#galeria">Galeria</a>
+        <a href="#faq">Dúvidas</a>
+      </div>
+      <a class="btn btn-gold" href="#inscricao">Inscreva-se</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="hero" id="inicio">
+    <div class="container hero-grid">
+      <div>
+        <span class="tag">Formação profissional em decoração</span>
+        <h1>Transforme festas em <span>experiências inesquecíveis.</span></h1>
+        <p>Cursos presenciais com Diego Lopes para quem quer começar, evoluir ou se tornar referência no mercado de decoração de eventos.</p>
+        <div class="hero-actions">
+          <a class="btn btn-gold" href="#cursos">Conheça os cursos</a>
+          <a class="btn btn-outline" href="#sobre">Conheça o professor</a>
+        </div>
+      </div>
+      <div class="hero-card">
+        <div class="hero-mini">
+          <strong>Aprendizado prático</strong>
+          Técnicas reais, montagem profissional e orientação para transformar conhecimento em renda.
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="stats">
+    <div class="container stats-grid">
+      <div class="stat"><strong>3</strong>níveis de formação</div>
+      <div class="stat"><strong>100%</strong>aprendizado prático</div>
+      <div class="stat"><strong>Presencial</strong>contato direto</div>
+      <div class="stat"><strong>Certificado</strong>ao concluir</div>
+    </div>
+  </section>
+
+  <section class="section" id="sobre">
+    <div class="container about-grid">
+      <div class="photo-placeholder">ESPAÇO PARA FOTO PROFISSIONAL<br>DE DIEGO LOPES</div>
+      <div>
+        <span class="tag" style="color:#8c6d28;border-color:#c7a24b">O professor</span>
+        <h2 class="section-title">Aprenda com quem vive a decoração todos os dias.</h2>
+        <p>Diego Lopes transforma experiência prática em um método de ensino direto, visual e aplicável. O aluno aprende desde a organização da montagem até os detalhes que valorizam uma decoração profissional.</p>
+        <div class="checklist">
+          <div class="check"><b>✓</b><span>Técnicas aplicadas em eventos reais.</span></div>
+          <div class="check"><b>✓</b><span>Orientação sobre montagem, acabamento e apresentação.</span></div>
+          <div class="check"><b>✓</b><span>Visão de mercado, atendimento e precificação.</span></div>
+        </div>
+        <a class="btn btn-gold" href="#inscricao">Quero aprender com Diego</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section courses" id="cursos">
+    <div class="container">
+      <h2 class="section-title" style="text-align:center">Escolha o curso ideal para o seu momento.</h2>
+      <p class="section-subtitle">Do primeiro contato com a decoração até uma formação avançada para quem quer se destacar no mercado.</p>
+      <div class="cards">
+        <article class="course-card">
+          <div class="course-cover">CURSO INICIANTE<br><small>ESPAÇO PARA FOTO</small></div>
+          <div class="course-body">
+            <h3>Iniciante</h3>
+            <p>Para quem quer começar com segurança e aprender as bases de uma montagem profissional.</p>
+            <ul>
+              <li>Balões e combinações</li>
+              <li>Estruturas e painéis</li>
+              <li>Organização da montagem</li>
+              <li>Primeiros atendimentos</li>
+            </ul>
+            <a class="btn btn-gold" href="#inscricao">Quero começar</a>
+          </div>
+        </article>
+
+        <article class="course-card">
+          <div class="course-cover">CURSO AVANÇADO<br><small>ESPAÇO PARA FOTO</small></div>
+          <div class="course-body">
+            <h3>Avançado</h3>
+            <p>Para decoradores que já atuam e desejam elevar técnica, acabamento e posicionamento.</p>
+            <ul>
+              <li>Orgânicos e volumes</li>
+              <li>Cenários e composição</li>
+              <li>Iluminação e flores</li>
+              <li>Decorações premium</li>
+            </ul>
+            <a class="btn btn-gold" href="#inscricao">Quero evoluir</a>
+          </div>
+        </article>
+
+        <article class="course-card">
+          <div class="course-cover">CURSO GOD<br><small>ESPAÇO PARA FOTO</small></div>
+          <div class="course-body">
+            <h3>GOD</h3>
+            <p>A formação completa para quem quer dominar técnica, gestão e crescimento profissional.</p>
+            <ul>
+              <li>Produções de alto padrão</li>
+              <li>Gestão e precificação</li>
+              <li>Marketing e vendas</li>
+              <li>Posicionamento profissional</li>
+            </ul>
+            <a class="btn btn-gold" href="#inscricao">Quero ser referência</a>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <h2 class="section-title" style="text-align:center">Conheça cada formação em vídeo.</h2>
+      <p class="section-subtitle">Substitua cada espaço pelo vídeo curto do Diego explicando para quem é o curso e o que o aluno aprenderá.</p>
+      <div class="video-grid">
+        <div class="video-box"><div><div class="play">▶</div><strong>Vídeo — Curso Iniciante</strong></div></div>
+        <div class="video-box"><div><div class="play">▶</div><strong>Vídeo — Curso Avançado</strong></div></div>
+        <div class="video-box"><div><div class="play">▶</div><strong>Vídeo — Curso GOD</strong></div></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section courses">
+    <div class="container">
+      <h2 class="section-title" style="text-align:center">O que você vai aprender.</h2>
+      <p class="section-subtitle">Conteúdo pensado para desenvolver técnica, criatividade e visão profissional.</p>
+      <div class="learn-grid">
+        <div class="learn-item"><span>🎈</span>Balões</div>
+        <div class="learn-item"><span>🧱</span>Estruturas</div>
+        <div class="learn-item"><span>🌸</span>Flores</div>
+        <div class="learn-item"><span>💡</span>Iluminação</div>
+        <div class="learn-item"><span>🎨</span>Design</div>
+        <div class="learn-item"><span>📐</span>Composição</div>
+        <div class="learn-item"><span>💰</span>Precificação</div>
+        <div class="learn-item"><span>📱</span>Marketing</div>
+        <div class="learn-item"><span>🤝</span>Atendimento</div>
+        <div class="learn-item"><span>📋</span>Planejamento</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section gallery" id="galeria">
+    <div class="container">
+      <h2 class="section-title">Trabalhos que inspiram.</h2>
+      <p class="section-subtitle" style="color:#bbb">Troque os espaços abaixo pelas melhores fotos das decorações da DL Decor e dos trabalhos realizados em aula.</p>
+      <div class="gallery-grid">
+        <div class="gallery-item">FOTO PRINCIPAL DE DECORAÇÃO</div>
+        <div class="gallery-item">FOTO 2</div>
+        <div class="gallery-item">FOTO 3</div>
+        <div class="gallery-item">FOTO 4</div>
+        <div class="gallery-item">FOTO 5</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <h2 class="section-title" style="text-align:center">O que os alunos dizem.</h2>
+      <p class="section-subtitle">Substitua estes textos por depoimentos reais, com nome e foto de cada aluno.</p>
+      <div class="testimonials">
+        <div class="quote"><div class="stars">★★★★★</div><p>“O curso mudou completamente minha forma de montar e apresentar meus trabalhos.”</p><strong>Nome da aluna</strong></div>
+        <div class="quote"><div class="stars">★★★★★</div><p>“Aprendi técnicas que consegui aplicar já nos meus primeiros eventos.”</p><strong>Nome da aluna</strong></div>
+        <div class="quote"><div class="stars">★★★★★</div><p>“Hoje me sinto mais segura para cobrar, vender e entregar uma decoração profissional.”</p><strong>Nome da aluna</strong></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section certificate">
+    <div class="container certificate-grid">
+      <div>
+        <span class="tag" style="color:#8c6d28;border-color:#c7a24b">Conclusão reconhecida</span>
+        <h2 class="section-title">Certificado ao final do curso.</h2>
+        <p>Ao concluir sua formação, o aluno recebe um certificado de participação da Escola DL Decor, registrando o conteúdo e a experiência vivida.</p>
+        <a class="btn btn-gold" href="#inscricao">Garanta sua vaga</a>
+      </div>
+      <div class="cert-placeholder">ESPAÇO PARA IMAGEM<br>DO CERTIFICADO</div>
+    </div>
+  </section>
+
+  <section class="section" id="faq">
+    <div class="container">
+      <h2 class="section-title" style="text-align:center">Perguntas frequentes.</h2>
+      <div class="faq">
+        <details><summary>Preciso ter experiência?</summary><p>Não. O Curso Iniciante foi pensado para quem está começando do zero.</p></details>
+        <details><summary>Os cursos são presenciais?</summary><p>Sim. A página pode ser atualizada com cidade, endereço, datas e horários de cada turma.</p></details>
+        <details><summary>Recebo certificado?</summary><p>Sim. O certificado é entregue ao final da formação.</p></details>
+        <details><summary>O material está incluso?</summary><p>Inclua aqui a informação correta de acordo com cada curso.</p></details>
+        <details><summary>Como faço a inscrição?</summary><p>Preencha o formulário abaixo. Depois, a equipe entra em contato com as orientações de matrícula e pagamento.</p></details>
+      </div>
+    </div>
+  </section>
+
+  <section class="section final-cta" id="inscricao">
+    <div class="container">
+      <span class="tag">Próxima turma</span>
+      <h2>Está pronto para elevar o seu nível na decoração?</h2>
+      <p style="color:#bbb;max-width:700px;margin:0 auto">Preencha seus dados para receber as informações sobre datas, valores e disponibilidade de vagas.</p>
+      <form class="form-box" onsubmit="event.preventDefault(); alert('Formulário demonstrativo. Conecte-o ao seu e-mail ou plataforma de inscrição.');">
+        <input type="text" placeholder="Nome completo" required />
+        <input type="email" placeholder="Seu melhor e-mail" required />
+        <input type="tel" placeholder="Telefone" required />
+        <select required>
+          <option value="">Curso de interesse</option>
+          <option>Iniciante</option>
+          <option>Avançado</option>
+          <option>GOD</option>
+        </select>
+        <button class="btn btn-gold" type="submit">QUERO RECEBER AS INFORMAÇÕES</button>
+      </form>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="container">© 2026 Escola DL Decor • Diego Lopes • Todos os direitos reservados.</div>
+</footer>
+</body>
+</html>
